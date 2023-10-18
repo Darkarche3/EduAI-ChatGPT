@@ -11,7 +11,7 @@ export async function sendMsgToOpenAI(message) {
         model: 'text-davinci-003',
         prompt: message,
         temperature: 0.7,
-        max_tokens: 256,
+        max_tokens: 3000,
         top_p: 1,
         frequency_penalty: 0
     });
