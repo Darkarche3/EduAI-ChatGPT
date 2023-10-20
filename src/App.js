@@ -16,7 +16,7 @@ function App() {
   const msgEnd = useRef(null);
   const[input, setInput] = useState("");
   const [messages, setMessages] = useState([{
-    text: "Hi I am EduAI, powered by ChatGPT. I am designed to help you study!",
+    text: "Hi I am EduAI, designed to help you study, what would you like to study today?",
     isBot: true,
   }]);
 
@@ -34,7 +34,7 @@ function App() {
     const res = await sendMsgToOpenAI(text);
     setMessages([...messages,
       { text, isBot: false},
-      { text : res, isBot: true}])
+      { text : "What is your level of knowledge on this subject? Beginner, Intermediate or Advanced?", isBot: true}])
       console.log(messages)
   }
 
@@ -64,6 +64,7 @@ function App() {
         <div className="upperSideBottom">
           <button className="query" onClick={handleQuery} value = "What is Programming?"><img src={msgIcon} alt="Query" />What is Programming?</button>
           <button className="query" onClick={handleQuery} value = "How to use an API?"><img src={msgIcon} alt="Query" />How to use an API?</button>
+          <button className="query" onClick={handleQuery} value = "What is your level of knowledge on this subject?"><img src={msgIcon} alt="Query" />What is your level of knowledge on this subject?Beginner, Intermediate, Advanced? </button>
         </div>
     </div>
     <div className="lowerSide">
