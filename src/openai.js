@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 const openai = new OpenAI({
-    apiKey: "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", dangerouslyAllowBrowser: true
+    apiKey: "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", dangerouslyAllowBrowser: true
   });
 //const { Configuration, OpenAIApi } = require('openai');
 //const configuration= new Configuration({ apiKey: "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"});
@@ -8,9 +8,9 @@ const openai = new OpenAI({
 
 export async function sendMsgToOpenAI(message) {
     const res =  await openai.completions.create({
-        model: 'text-davinci-003',
+        model: "gpt-3.5-turbo-instruct",
         prompt: message,
-        temperature: 0.7,
+        temperature: 0.2,
         max_tokens: 4000,
         top_p: 1,
         frequency_penalty: 0
